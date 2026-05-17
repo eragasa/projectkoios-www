@@ -1,0 +1,467 @@
+/* www/assets/css/style.css */
+
+/* ============================================================
+   Project Koios Design System
+   ============================================================ */
+
+:root {
+  /* Core palette */
+  --color-paper: #f4f1e8;
+  --color-ink: #171717;
+  --color-graphite: #5f6368;
+  --color-rule: #d8d1c4;
+  --color-panel: #fff9ed;
+  --color-blue: #1f4e5f;
+
+  /* Secondary palette */
+  --color-charcoal: #111418;
+  --color-slate: #1b2229;
+  --color-terminal: #0b0d10;
+  --color-code-text: #d6e4ff;
+  --color-oxide: #9a4a2f;
+  --color-green: #3e6b50;
+
+  /* Semantic aliases */
+  --bg: var(--color-paper);
+  --text: var(--color-ink);
+  --muted: var(--color-graphite);
+  --line: var(--color-rule);
+  --panel: var(--color-panel);
+  --accent: var(--color-blue);
+
+  /* Typography */
+  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-reading: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Layout */
+  --max-width: 1120px;
+  --narrow-width: 760px;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--color-oxide);
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.container.narrow {
+  max-width: var(--narrow-width);
+}
+
+p {
+  margin: 1rem 0 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-family: var(--font-reading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.04em;
+}
+
+h3 {
+  margin-bottom: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.header-inner {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.site-title {
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 850;
+  font-size: 1.05rem;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--text);
+}
+
+.site-tagline {
+  max-width: 360px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+/* ============================================================
+   Home Intro
+   ============================================================ */
+
+.home-intro {
+  padding: 4rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lead {
+  margin-top: 1.5rem;
+  color: var(--text);
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.statement {
+  margin-top: 1.25rem;
+  color: var(--text);
+  font-weight: 850;
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+
+.section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section.muted {
+  background: var(--panel);
+}
+
+.section-header {
+  max-width: var(--narrow-width);
+  margin-bottom: 1.5rem;
+}
+
+.section-header p {
+  color: var(--muted);
+}
+
+.punchline {
+  color: var(--text);
+  font-weight: 850;
+  font-size: 1.08rem;
+}
+
+.method-list {
+  margin: 1.25rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.method-list li {
+  margin: 0.35rem 0;
+}
+
+/* ============================================================
+   Index Cards
+   ============================================================ */
+
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.index-card {
+  display: block;
+  min-height: 150px;
+  padding: 1.25rem;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.index-card:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.index-title {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 850;
+}
+
+.index-desc {
+  display: block;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   Legacy Cards
+   Kept for pages that still use .card-grid / .card
+   ============================================================ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  padding: 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+/* ============================================================
+   Code and Technical Text
+   ============================================================ */
+
+code,
+pre,
+kbd,
+.file-path,
+.command,
+.technical-tag {
+  font-family: var(--font-mono);
+}
+
+code {
+  padding: 0.1rem 0.25rem;
+  color: var(--color-charcoal);
+  background: rgba(31, 78, 95, 0.09);
+  border: 1px solid rgba(31, 78, 95, 0.14);
+}
+
+pre {
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  overflow-x: auto;
+  color: var(--color-code-text);
+  background: var(--color-terminal);
+  border: 1px solid var(--color-charcoal);
+}
+
+pre code {
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+}
+
+/* ============================================================
+   Callouts
+   ============================================================ */
+
+.callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--panel);
+  border-left: 4px solid var(--accent);
+}
+
+.callout-title {
+  margin-bottom: 0.5rem;
+  font-weight: 850;
+}
+
+.callout-warning {
+  border-left-color: var(--color-oxide);
+}
+
+.callout-result {
+  border-left-color: var(--color-green);
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+
+table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--text);
+  font-weight: 850;
+}
+
+td {
+  color: var(--muted);
+}
+
+/* ============================================================
+   Math Rendering
+   MathJax / KaTeX compatibility
+   ============================================================ */
+
+mjx-container,
+.katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+mjx-container[display="true"],
+.katex-display {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0;
+}
+
+.math-block {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.site-footer {
+  padding: 2rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .site-nav {
+    gap: 0.75rem;
+  }
+
+  .home-intro {
+    padding: 3.25rem 0 3rem;
+  }
+
+  .index-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 16px;
+  }
+
+  .container {
+    width: min(100% - 1.5rem, var(--max-width));
+  }
+
+  .site-nav {
+    font-size: 0.88rem;
+  }
+}
